@@ -662,7 +662,10 @@ body {
 }
 
 .button-close {
+  display: inline-flex;
   position: absolute;
+  justify-content: center;
+  align-items: center;
   right: 0;
   top: 0;
   margin-top: 8px;
