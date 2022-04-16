@@ -113,6 +113,7 @@ body {
 
 .name {
   position: relative;
+  display: block;
   padding-top: 32px;
   padding-bottom: 32px;
   color: var(--primary-text-color);
@@ -120,7 +121,7 @@ body {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  transition-property: color 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function);
 }
 /*.name::after{
   content: '';
@@ -467,15 +468,17 @@ body {
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: inherit;
+  transition: color 250ms var(--timing-function),
+  background-color 250ms var(--timing-function),
+  box-shadow 250ms var(--timing-function);
   cursor: pointer;
+  
 }
 
 .btn.primary {
   background-color: var(--secondary-background-color);
   border: none;
-  transition: color 250ms var(--timing-function), 
-  background-color 250ms var(--timing-function),
-  box-shadow 250ms var(--timing-function);
+  
 }
 
 .btn.primary:hover,
@@ -547,7 +550,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  transform: translateY(100%);
+  transform: translateY(101%);
   transition: transform 250ms var(--timing-function);
   background-color: rgba(33, 150, 243, 0.9);
 }
@@ -563,6 +566,10 @@ body {
 .flex-item:hover .team-overlay{
   transform: translateY(0%);
 }
+.flex-link:focus .team-overlay {
+  transform: translateY(0%);
+}
+
 .flex-name {
   margin-bottom: 4px;
   font-weight: 700;
@@ -602,6 +609,8 @@ body {
 }
 .address-link {
   display: block;
+}
+.address-item {
   margin-top: 9px;
 }
 .address-link:hover,
@@ -633,10 +642,14 @@ body {
 }
 .foot{
  display: flex;
+ align-items: baseline;
 }
 .foot-link {
   fill: var(--white-color);
   background-color: rgba(255, 255, 255, .1);
+}
+.icon-link.foot-link {
+  transition: background-color 250ms var(--timing-function)
 }
 .backdrop {
   position: fixed;
